@@ -656,5 +656,36 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "umbrella-id-hehe",
+    image: "images/products/umbrella.jpg",
+    name: "UV Protection Compact Umbrella - Green Color",
+    rating: {
+      stars: 4.5,
+      count: 382
+    },
+    priceCents: 1850,
+    keywords: [
+      "umbrella",
+      "shades",
+      "apparel"
+    ]
+  },
+  {
+    id: "backpack-id-hehe",
+    image: "images/products/backpack.jpg",
+    name: "Large Waterproof Sport Backpack - Black Color",
+    rating: {
+      stars: 5,
+      count: 193
+    },
+    priceCents: 2400,
+    keywords: [
+      "backpack",
+      "sports",
+      "apparel",
+      "mens"
+    ]
   }
 ];
