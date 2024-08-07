@@ -55,9 +55,9 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-const addedMessageTimeouts = {};
-
 document.querySelectorAll('.js-add-to-cart').forEach(button => {
+  let addedMessageTimeoutId;
+
   button.addEventListener('click', () => {
     const {productId} = button.dataset;
     const quantity = Number(document.querySelector(`.js-quantity-selector-${productId}`).value);
@@ -90,15 +90,14 @@ document.querySelectorAll('.js-add-to-cart').forEach(button => {
     const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
     addedMessage.classList.add('added-to-cart-visible');
 
-    const previousTimeoutId = addedMessageTimeouts[productId];
-    if (previousTimeoutId) {
-      clearTimeout(previousTimeoutId);
+    if (addedMessageTimeoutId) {
+      clearTimeout(addedMessageTimeoutId);
     }
 
     const timeoutId = setTimeout(() => {
       addedMessage.classList.remove('added-to-cart-visible');
     }, 2000);
-    addedMessageTimeouts[productId] = timeoutId;
+    addedMessageTimeoutId = timeoutId;
   });
 });
 
