@@ -19,7 +19,8 @@ export function addToCart(productId) {
   if (!productExisted) {
     cart.push({
       productId,
-      quantity
+      quantity,
+      deliveryOptionId: '1'
     });
   }
 
