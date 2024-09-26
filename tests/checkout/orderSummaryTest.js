@@ -33,7 +33,7 @@ describe('test suite: render order summary', () => {
     document.querySelector('.js-test-container').innerHTML = '';
   });
 
-  it('display the cart', () => {
+  it('displays the cart', () => {
     expect(
       document.querySelectorAll('.js-cart-item-container').length
     ).toEqual(2);
