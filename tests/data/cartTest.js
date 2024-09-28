@@ -1,21 +1,22 @@
 import {addToCart, cart, loadFromStorage} from "../../data/cart.js";
 
 describe('test suite: addToCart', () => {
-  //create a mock Input element that's used in addToCart function:
-  let mockInputElement;
 
   beforeEach(() => {
     spyOn(localStorage, 'setItem');
 
-    mockInputElement = document.createElement('input');
-    mockInputElement.className = 'js-quantity-selector-e43638ce-6aa0-4b85-b27f-e1d07eb678c6';
-    mockInputElement.value = 1;
-    document.body.appendChild(mockInputElement);
+    //create a mock Input element that's used in addToCart function:
+    document.querySelector('.js-test-container').innerHTML = `
+      <input
+        class="js-quantity-selector-e43638ce-6aa0-4b85-b27f-e1d07eb678c6"
+        value="1"
+      ></input>
+    `;
   });
 
   afterEach(() => {
     //remove the mock element:
-    document.body.removeChild(mockInputElement);
+    document.querySelector('.js-test-container').innerHTML = '';
   });
 
   it('adds an existing product to the cart', () => {
