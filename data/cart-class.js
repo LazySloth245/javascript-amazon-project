@@ -97,7 +97,8 @@ class Cart {
 }
 
 //"cart" and "businessCart" are called Instances of the class "Cart"
-const cart = new Cart('cart-oop');
+export const cart = new Cart('cart-oop');
+/*
 const businessCart = new Cart('cart-business');
 
 cart.addToCart('sample-product');
@@ -105,3 +106,4 @@ businessCart.addToCart('sample-business-product');
 
 console.log(cart);
 console.log(businessCart);
+*/
