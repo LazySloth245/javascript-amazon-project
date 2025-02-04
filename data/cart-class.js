@@ -20,19 +20,21 @@ class Cart {
   }
 
   addToCart(productId) {
+    const quantity = Number(document.querySelector(`.js-quantity-selector-${productId}`).value);
+    
     let productExisted = false;
   
     this.cartItems.forEach((cartItem) => {
       if (productId === cartItem.productId) {
         productExisted = true;
-        cartItem.quantity ++;
+        cartItem.quantity += quantity;
       }
     });
   
     if (!productExisted) {
       this.cartItems.push({
         productId,
-        quantity: 1,
+        quantity,
         deliveryOptionId: '1'
       });
     }
