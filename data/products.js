@@ -81,6 +81,10 @@ export class Appliance extends Product {
 
 export let products = [];
 
+function loadProductsFetch() {
+  fetch('')
+}
+
 export function loadProducts(fun) {
   const xhr = new XMLHttpRequest();
 
